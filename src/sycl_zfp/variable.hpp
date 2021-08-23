@@ -96,7 +96,7 @@ namespace syclZFP {
                     mask &= ~(0xffffffff << ((misaligned + length_bits) & 31));
 
                 ATOMIC_REF_NAMESPACE::atomic_ref<uint, ATOMIC_REF_NAMESPACE::memory_order::relaxed, ATOMIC_REF_NAMESPACE::memory_scope::device, sycl::access::address_space::global_space> ref(sm_out[off_smout + i]);
-                ref += v1 & mask;
+                // ref += v1 & mask;
             }
         }
 
